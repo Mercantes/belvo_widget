@@ -40,10 +40,15 @@ app.post('/gerar-widget', async (req, res) => {
     );
 
     res.json({ widget_token: widgetRes.data.token });
-  } catch (err) {
-    console.error(err?.response?.data || err.message);
-    res.status(500).json({ error: 'Erro ao gerar token do widget' });
-  }
+} catch (err) {
+  console.error("Erro completo:", {
+    status: err?.response?.status,
+    data: err?.response?.data,
+    headers: err?.response?.headers,
+    message: err.message
+  });
+  res.status(500).json({ error: 'Erro ao gerar token do widget' });
+}
 });
 
 app.get('/', (req, res) => {
