@@ -3,8 +3,8 @@ const axios = require('axios');
 const app = express();
 app.use(express.json());
 
-const BELVO_ID = process.env.BELVO_ID;
-const BELVO_PASSWORD = process.env.BELVO_PASSWORD;
+const BELVO_ID = process.env.BELVO_ID || "4f318931-75cb-4569-a1c9-55aef78886f0";
+const BELVO_PASSWORD = process.env.BELVO_PASSWORD || "o-fsvJ@kyrOtIUxLPkF8o-nFjW51kj_aXq_HvWV6RlSehchdBlW6iHSENC13IQKt";
 
 console.log("BELVO_ID:", BELVO_ID);
 console.log("BELVO_PASSWORD:", BELVO_PASSWORD ? "OK" : "FALTANDO");
